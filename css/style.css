@@ -1,0 +1,49 @@
+:root {
+    /* COLORS */
+    --orange: hsl(26, 100%, 55%);
+    --paleOrange: hsl(25, 100%, 94%);
+    --darkBlue: hsl(220, 13%, 13%);
+    --darkGBlue: hsl(219, 9%, 45%);
+    --grayBlue: hsl(220, 14%, 75%);
+    --lightGBlue: hsl(223, 64%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+}
+
+.img_container{
+    width: 50%;
+}
+
+.thumbnail{
+    background-image: url(/css/img/image-product-1.jpg);
+    height: 420px;
+    width: 420px;
+    background-size: cover;
+}
+
+.preview-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.preview{
+    height: 85px;
+    width: 85px;
+    background-size: cover;
+}
+
+.pr1{
+    background-image: url(/css/img/image-product-1-thumbnail.jpg);
+}
+.pr2{
+    background-image: url(/css/img/image-product-1-thumbnail.jpg);
+
+}
+.pr3{
+    background-image: url(/css/img/image-product-1-thumbnail.jpg);
+}
+.pr4{
+    background-image: url(/css/img/image-product-1-thumbnail.jpg);
+}
