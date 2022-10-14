@@ -1,10 +1,16 @@
 //* VARIABLES
-
+let images = [
+  "./css/img/image-product-1.jpg",
+  "./css/img/image-product-2.jpg",
+  "./css/img/image-product-3.jpg",
+  "./css/img/image-product-4.jpg",
+];
 const pr1 = document.querySelector(".pr1");
 const pr2 = document.querySelector(".pr2");
 const pr3 = document.querySelector(".pr3");
 const pr4 = document.querySelector(".pr4");
 const thumbnail = document.querySelector(".thumbnail");
+const previewContainer = document.querySelector(".preview-container");
 const preview = document.querySelectorAll(".preview");
 
 /**
@@ -13,50 +19,31 @@ const preview = document.querySelectorAll(".preview");
  * @returns new image source
  */
 
-function changeImg(item) {
-  preview.forEach((element) => {
-    element.classList.contains("orange-border")
-      ? element.classList.remove("orange-border")
-      : null;
+function getCarrousel(arr) {
+  arr.forEach((img, index) => {
+    let div = document.createElement("div");
+    div.classList.add("preview");
+    let imgTag = document.createElement("img");
+    imgTag.src = img;
+    if (index == 0) {
+      imgTag.classList.add("img-opacity");
+      div.classList.add("orange-border");
+    }
+    div.appendChild(imgTag);
+    previewContainer.appendChild(div);
+    div.addEventListener("click", (e) => {
+      let propImg = document.getElementsByClassName("orange-border");
+      propImg[0].classList.toggle("orange-border");
+      let opcImg = document.getElementsByClassName("img-opacity");
+      opcImg[0].classList.toggle("img-opacity")
+      thumbnail.src = e.target.getAttribute("src");
+      div.classList.add("orange-border");
+      imgTag.classList.add("img-opacity");
+    });
   });
-  if (item[1] == "pr1") {
-    item.add("orange-border");
-    return (thumbnail.src = "./css/img/image-product-1.jpg");
-  }
-
-  if (item[1] == "pr2") {
-    item.add("orange-border");
-    return (thumbnail.src = "./css/img/image-product-2.jpg");
-  }
-
-  if (item[1] == "pr3") {
-    item.add("orange-border");
-    return (thumbnail.src = "./css/img/image-product-3.jpg");
-  }
-
-  if (item[1] == "pr4") {
-    item.add("orange-border");
-    return (thumbnail.src = "./css/img/image-product-4.jpg");
-  }
 }
 
-//* ADD CLICK EVENT
-
-pr1.addEventListener("click", (e) => {
-  changeImg(e.target.classList);
-});
-
-pr2.addEventListener("click", (e) => {
-  changeImg(e.target.classList);
-});
-
-pr3.addEventListener("click", (e) => {
-  changeImg(e.target.classList);
-});
-
-pr4.addEventListener("click", (e) => {
-  changeImg(e.target.classList);
-});
+getCarrousel(images);
 
 //* BUTTONS FUNCTIONS (INCREASE AND DECREASE)
 

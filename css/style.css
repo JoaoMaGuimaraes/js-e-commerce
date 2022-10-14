@@ -53,6 +53,10 @@ main {
     background-size: cover;
 }
 
+.preview img {
+    width: 100%;
+}
+
 .pr1 {
     background-image: url(/css/img/image-product-1-thumbnail.jpg);
 }
@@ -155,6 +159,9 @@ main {
 }
 
 .orange-border {
-    border: 2px solid var(--orange);
+    border: 3px solid var(--orange);
+}
+
+.img-opacity{
     opacity: 0.5;
 }
